@@ -6,7 +6,7 @@ date_location_extractor is a date_location extractor that retrieves dates and lo
 
 Grab the package using `pip` (this will take a few minutes)
 ```bash
-pip install TBD
+pip install date-location-extractor
 ```
 
 Dater Location Extractor uses the following dependencies:
@@ -31,7 +31,7 @@ print(date_location_extractor.get_date_location_from_json_file("list_to_parse.js
 
 The result is a list of dictionaries, e.g:
 ```json
-[{'address': 'San Juan Costa Rica', 'date_iso': '2009-11-27', 'ranking': 1.0, 'normalized_address': {'City': 'San Juan', 'Country': 'CR'}}]
+[{"address": "San Juan Costa Rica", "date_iso": "2009-11-27", "ranking": 1.0, "normalized_address": {"City": "San Juan", "Country": "CR"}}]
 ````
 Without loading a file:
 ```python
@@ -42,4 +42,9 @@ print(date_location_extractor.get_date_location_from_list(["13 May 2009", "12/15
 print(date_location_extractor.get_date_location_from_list_with_parser(["13 May 2009", "12/15/2010"]))
 ```
 
-The ranking algorithm 
+The ranking algorithm has the following weights set:
+
+- RANKING_WEIGHT_HAS_DATE = 0.3
+- RANKING_WEIGHT_HAS_DAY = 0.2
+- RANKING_WEIGHT_HAS_COUNTRY = 0.3
+- RANKING_WEIGHT_HAS_CITY = 0.2
