@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="date_location_extractor",
-    version="0.1.0",
+    version="0.1.1",
     description="Extract date and location from a list of strings",
     long_description=README,
     long_description_content_type="text/markdown",
